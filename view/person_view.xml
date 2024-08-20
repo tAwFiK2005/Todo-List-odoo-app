@@ -1,0 +1,51 @@
+<odoo>
+    <record id="task_person_view_tree" model="ir.ui.view">
+        <field name="name">task.person.tree</field>
+        <field name="model">task.person</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="tasks"/>
+                <field name="task_ids" widget = "many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="task_person_view_form" model="ir.ui.view">
+        <field name="name">task.person.form</field>
+        <field name="model">task.person</field> 
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Information">
+                            <field name="tasks"/>
+                            <field name="task_ids" widget = "many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="task_person_action" model="ir.actions.act_window">
+        <field name="name">Persons</field>
+        <field name="res_model">task.person</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="person_menu_item"
+        name="Persons"
+        parent="person_menu"
+        action="task_person_action"
+    />
+</odoo>

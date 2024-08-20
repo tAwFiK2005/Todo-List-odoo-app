@@ -1,0 +1,17 @@
+<odoo>
+    <menuitem
+    id="to_do_root_menu"
+    name ="To Do List"
+    web_icon="todo,static/description/icon.png"
+    />
+    <menuitem
+        id="todo_menu"
+        name ="All Tasks"
+        parent="to_do_root_menu"
+    />
+    <menuitem
+        id="person_menu"
+        name ="Persons"
+        parent="to_do_root_menu"
+    />
+</odoo>
